@@ -112,21 +112,21 @@ $EndComp
 $Comp
 L Conn_01x14 J2
 U 1 1 5A99BB27
-P 800 3200
-F 0 "J2" H 800 3900 50  0000 C CNN
-F 1 "Conn_01x14" H 800 2400 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x14_Pitch2.54mm" H 800 3200 50  0001 C CNN
-F 3 "" H 800 3200 50  0001 C CNN
-	1    800  3200
-	-1   0    0    -1  
+P 1700 1550
+F 0 "J2" H 1700 2250 50  0000 C CNN
+F 1 "Conn_01x14" H 1700 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x14_Pitch2.54mm" H 1700 1550 50  0001 C CNN
+F 3 "" H 1700 1550 50  0001 C CNN
+	1    1700 1550
+	1    0    0    1   
 $EndComp
-Text Label 1000 3900 0    60   ~ 0
+Text Label 1500 850  2    60   ~ 0
 VCC
 Text Label 1000 2150 0    60   ~ 0
 GND
 Text Label 1000 850  0    60   ~ 0
 OE
-Text Label 1000 2600 0    60   ~ 0
+Text Label 1500 2150 2    60   ~ 0
 LE
 Text Label 1000 950  0    60   ~ 0
 A0
@@ -152,21 +152,21 @@ Text Label 1000 1950 0    60   ~ 0
 A10
 Text Label 1000 2050 0    60   ~ 0
 A11
-Text Label 1000 2700 0    60   ~ 0
+Text Label 1500 2050 2    60   ~ 0
 A12
-Text Label 1000 2800 0    60   ~ 0
+Text Label 1500 1950 2    60   ~ 0
 A13
-Text Label 1000 2900 0    60   ~ 0
+Text Label 1500 1850 2    60   ~ 0
 A14
-Text Label 1000 3000 0    60   ~ 0
+Text Label 1500 1750 2    60   ~ 0
 A15
-Text Label 1000 3800 0    60   ~ 0
+Text Label 1500 950  2    60   ~ 0
 MOSI
-Text Label 1000 3700 0    60   ~ 0
+Text Label 1500 1050 2    60   ~ 0
 MISO
-Text Label 1000 3600 0    60   ~ 0
+Text Label 1500 1150 2    60   ~ 0
 SCK
-Text Label 1000 3500 0    60   ~ 0
+Text Label 1500 1250 2    60   ~ 0
 RESET
 Text Label 4050 3300 0    60   ~ 0
 MOSI
@@ -311,7 +311,7 @@ L R R1
 U 1 1 5A9ADE59
 P 4200 2800
 F 0 "R1" V 4280 2800 50  0000 C CNN
-F 1 "300" V 4200 2800 50  0000 C CNN
+F 1 "4.7K" V 4200 2800 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4130 2800 50  0001 C CNN
 F 3 "" H 4200 2800 50  0001 C CNN
 	1    4200 2800
@@ -344,7 +344,7 @@ L R R2
 U 1 1 5A9AE3C9
 P 4200 2900
 F 0 "R2" V 4280 2900 50  0000 C CNN
-F 1 "300" V 4200 2900 50  0000 C CNN
+F 1 "4.7K" V 4200 2900 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4130 2900 50  0001 C CNN
 F 3 "" H 4200 2900 50  0001 C CNN
 	1    4200 2900
@@ -355,7 +355,7 @@ L R R3
 U 1 1 5A9AE44E
 P 4200 3000
 F 0 "R3" V 4280 3000 50  0000 C CNN
-F 1 "300" V 4200 3000 50  0000 C CNN
+F 1 "4.7K" V 4200 3000 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4130 3000 50  0001 C CNN
 F 3 "" H 4200 3000 50  0001 C CNN
 	1    4200 3000
@@ -366,7 +366,7 @@ L R R4
 U 1 1 5A9AE454
 P 4200 3100
 F 0 "R4" V 4280 3100 50  0000 C CNN
-F 1 "300" V 4200 3100 50  0000 C CNN
+F 1 "4.7K" V 4200 3100 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4130 3100 50  0001 C CNN
 F 3 "" H 4200 3100 50  0001 C CNN
 	1    4200 3100
@@ -466,9 +466,9 @@ Cg
 NoConn ~ 2050 2300
 NoConn ~ 2050 2700
 NoConn ~ 2050 3100
-NoConn ~ 1000 3200
-NoConn ~ 1000 3300
-NoConn ~ 1000 3100
+NoConn ~ 1500 1550
+NoConn ~ 1500 1450
+NoConn ~ 1500 1650
 Text Label 4050 5300 0    60   ~ 0
 LE
 Text Label 4050 3200 0    60   ~ 0
@@ -477,7 +477,7 @@ NoConn ~ 6200 3100
 NoConn ~ 7350 3100
 NoConn ~ 8400 3100
 NoConn ~ 9500 3100
-Text Label 1000 3400 0    60   ~ 0
+Text Label 1500 1350 2    60   ~ 0
 DVCC
 Connection ~ 2950 5600
 Connection ~ 2850 5600
@@ -505,12 +505,24 @@ Wire Wire Line
 	9200 2200 9200 2300
 Connection ~ 9200 2300
 Wire Wire Line
-	2750 5600 3050 5600
+	2750 5600 2850 5600
 Wire Wire Line
-	2750 1600 3150 1600
+	2850 5600 2950 5600
+Wire Wire Line
+	2950 5600 3050 5600
+Wire Wire Line
+	2750 1600 2850 1600
+Wire Wire Line
+	2850 1600 2950 1600
+Wire Wire Line
+	2950 1600 3150 1600
 Connection ~ 2850 1600
 Wire Wire Line
-	5900 1800 9200 1800
+	5900 1800 7050 1800
+Wire Wire Line
+	7050 1800 8100 1800
+Wire Wire Line
+	8100 1800 9200 1800
 Connection ~ 7050 1800
 Connection ~ 8100 1800
 Text Label 9200 1800 0    60   ~ 0
