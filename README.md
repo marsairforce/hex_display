@@ -24,6 +24,11 @@ The schematic is set up to have the 16 address pins, an output enable pin and a 
 
 So the idea is to read the input pin values. and then display value as hex, using software to multiplex the displays.
 
+And then here it is built and getting tested.
+![v1 module](photos/v1_module.png)
+
+I made a small program to just loop and count up digits to test it, so I don't have to wire up input switches.
+
 # Programming
 At first I had some learning curve to program this. I was using the Arduino IDE (instead of spending time to get avr-gcc and the tool chain to work on its own with a Makefile, becuase.. macbook here..).
 
