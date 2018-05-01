@@ -17,6 +17,7 @@ But when working with these old parallel binary bus types of architectures, it i
 Usually you would be a monitor and debug panel with LED and switches on it. And then you have to look at the LEDs and interpret the value of these.
 
 ![led panel](photos/700_Retro_Elf_2015B_-_Front.jpg)
+
 Photo from [astrorat.com](http://www.astrorat.com/cosmacelf/retroelf2015.html)
 
 But if you are used to thinking in base 16 instead of binary, then having a hexadecimal display is much better. Trying to fight the process and interpret the binary LEDS is very slow, tedious, and error prone.
@@ -41,8 +42,9 @@ This is a 28 DIP form factor circuit board using an Atmega 164A. Because it has 
 
 Using Atmega164A device and 4 10mm 7 segment displays.
 
-![fig1](photos/hex_display1.png)
-![fig2](photos/hex_display2.png)
+<table>
+<tr><td>
+<img alt="fig1" src="photos/hex_display1.png" height="150"/></td><td><img alt="fig2" src="photos/hex_display2.png" height="150"/></td></tr></table>
 
 The device was chosen because it has enough IO pins to directly drive all the segments with display multiplexing (the common anodes, using a transistor driver).
 
