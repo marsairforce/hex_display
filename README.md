@@ -18,6 +18,12 @@ It was supposed to be a 28 pin dip format, but it is accidentally almost too wid
 
 Since we have pins for the MISO, MOSI, SCK. We can have a mode where this thing is an I2C or SPI slave and displays values on an I2C bus? That might be an intersting use. A display module. Though I would probably just use it as a clock since thats all I seem to build these days.
 
+The schematic is set up to have the 16 address pins, an output enable pin and a latch enable pin.
+
+![v1 schematic](photos/v1_schematic.png)
+
+So the idea is to read the input pin values. and then display value as hex, using software to multiplex the displays.
+
 # Programming
 At first I had some learning curve to program this. I was using the Arduino IDE (instead of spending time to get avr-gcc and the tool chain to work on its own with a Makefile, becuase.. macbook here..).
 

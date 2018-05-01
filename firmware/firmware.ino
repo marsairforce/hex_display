@@ -143,8 +143,8 @@ void setup() {
   pinMode(PIN_CF, OUTPUT);
   pinMode(PIN_CG, OUTPUT);
 
-  pinMode(PIN_LE, INPUT);
-  pinMode(PIN_OE, INPUT);
+  pinMode(PIN_LE, INPUT_PULLUP);
+  pinMode(PIN_OE, INPUT_PULLUP);
 
   pinMode(PIN_A0, INPUT_PULLUP);
   pinMode(PIN_A1, INPUT_PULLUP);
@@ -182,7 +182,7 @@ void setup() {
 // storage for what we read from [A0..A15] inputs
 
 int raw_value = 0;
-int s = 5;
+int s = 1;
 
 // port C is MSB, port A is LSB
 void read_raw_value() {
@@ -214,12 +214,20 @@ void display_value() {
   PORTD |= digits[(raw_value & 0x000F) ];
   delay(s );
 
+  PORTB &= ~0x0F;
+  PORTB |= 0x0F;
 }
 
 int counter = 0;
 void loop() {
-  read_raw_value();
-  display_value();
+  if (PIND & 0x80) { // only read inputs if LE is not 0.
+    read_raw_value();
+  } 
+
+  // only display things if OE is low
+  if ((PINB & 0x10)) {
+    display_value();
+  }
 //  if (counter % 200 == 0) {
 //    raw_value ++;
 //    counter = 0;
