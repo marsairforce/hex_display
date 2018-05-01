@@ -35,7 +35,9 @@ So then putting some energy intiwanting to build the usbtinyisp, as maybe that w
 
 So getting the usbtiny programmer to work, and then learning we need to edit the avrdude.conf file to allow it to recognize the Atmega164A device. And then learning the Arduino IDE supports a `Upload using programmer` mode, so then going back to just using that. And here we are. Other than some random crazy ramblings and a somewhat arbitrary path to get here, I have uninteligently managed to use Arduino IDE with MightyCore, the updated avrdude.conf, with a usbtinyisp.
 
-#TODO
+# TODO
+* Lay out the board to be not as tall. It barely fits on a breadboard now. Maybe need to use slightly smaller displays. The priority at the time was to have the edges flat and narrow so two or modules could be placed side by side for a 32 bit readout. But then we forgot we can't be too tall either.
+
 * Improve the firmware. Investigate using C and avr-gcc directly. Learning more about the registers and internal details of the microcontroller. For now the delays in the visual display of numbers were thought to be "good enough". Using the internal uncalibrated oscillator of the device, so nothing timing critical going on here too.
 
 * Investigate adding serial input option, i2c slave feature (using the USIwire, because the SDA/SCL pins for hardware TWI are also PC0..PC1, which is A8 and A9 inputs) or SPI. We have the SPI pins on PB5..PB7 for programming, but not used in normal operation.
