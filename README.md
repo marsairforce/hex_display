@@ -81,6 +81,8 @@ Some ideas so far for improment:
 
 * Create a socket adapter module to fit a standard 27xx series (E)EPROM type of DIP socket, with the pin outs of these memory devices. So we can have the hex display show the contents of the address bus. The use case here is we could place this display into a socket on a motherboard of an existing retro computer, or piggy back it onto the (E)EPROM so we can see what is going on when the computer is operating.
 
+* Design an 8 bit version. So we can see 8 bit bus things as well. Just 2 digits then.  Maybe we can use a smaller microcontroller then, like just the At328p.
+
 * Improve the firmware. Investigate using C and avr-gcc directly. Learning more about the registers and internal details of the microcontroller. For now the delays in the visual display of numbers were thought to be "good enough". Using the internal uncalibrated oscillator of the device, so nothing timing critical going on here too.
 
 * Investigate adding serial input option, i2c slave feature (using the USIwire, because the SDA/SCL pins for hardware TWI are also PC0..PC1, which is A8 and A9 inputs) or SPI. We have the SPI pins on PB5..PB7 for programming, but not used in normal operation.

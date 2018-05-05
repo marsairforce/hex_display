@@ -158,10 +158,10 @@ void setup() {
   pinMode(PIN_A9, INPUT_PULLUP);
   pinMode(PIN_A10, INPUT_PULLUP);
   pinMode(PIN_A11, INPUT_PULLUP);
-  pinMode(PIN_A12, INPUT);
-  pinMode(PIN_A13, INPUT);
-  pinMode(PIN_A14, INPUT);
-  pinMode(PIN_A15, INPUT);
+  pinMode(PIN_A12, INPUT_PULLUP);
+  pinMode(PIN_A13, INPUT_PULLUP);
+  pinMode(PIN_A14, INPUT_PULLUP);
+  pinMode(PIN_A15, INPUT_PULLUP);
 
   // initially all cathodes and anodes off
   digitalWrite(PIN_CA, HIGH);
@@ -183,7 +183,6 @@ void setup() {
 
 int raw_value = 0;
 int s = 1;
-
 // port C is MSB, port A is LSB
 void read_raw_value() {
     raw_value = (PINC << 8) | PINA;
@@ -220,6 +219,7 @@ void display_value() {
 
 int counter = 0;
 void loop() {
+//  raw_value = 0x8888;
   if (PIND & 0x80) { // only read inputs if LE is not 0.
     read_raw_value();
   } 
